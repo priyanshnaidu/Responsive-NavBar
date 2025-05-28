@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: gray; /* Gray background */
+}
+
+nav {
+  background-color: white; /* White navbar */
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: "Comic Sans MS", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.menu-toggle {
+  font-size: 25px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+
+ul.nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  width: auto;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+}
+
+ul.nav li a {
+  color: black;
+  text-decoration: underline;
+  padding: 0.5rem;
+  transition: color 0.3s;
+  user-select: none;
+}
+
+ul.nav li a:hover {
+  color: #555;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  ul.nav {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    margin-top: 1rem;
+    display: block;
+  }
+
+  ul.nav.active {
+    max-height: 500px;
+  }
+
+  ul.nav li a {
+    display: block;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+  }
+}
